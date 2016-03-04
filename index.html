@@ -7,15 +7,16 @@
 </head>
 <body ng-controller="FilmsController">
     <!--{{test}}-->
-    <input type="text" ng-model="FilmController" />
-    <button ng-click="sortOrder='name''">Sort by Name</button>
-    <button ng-click="sortOrder='year'">Sort by year</button>
+    <h3>Valiant attempt! but these features are currently not working</h3>
+    <button ng-click="sortOrder='film.name''">Sort by Name</button>
+    <button ng-click="sortOrder='film.year'">Sort by year</button>
     
     <ul>
-        <!--<li ng-repeat="film in films | filter: query | orderBy: sortOrder">-->
-            <li ng-repeat="film in films">
-            
-            <h3>{{film.name}} - {{film.year}} <a href="#" ng-click="removeItem($index)"><span class="badge">Remove</span></a></h3>
+        <li ng-repeat="film in films | filter: query | orderBy: sortOrder">
+            <!--<li ng-repeat="film in films">-->
+            <div>
+            <h3>{{film.name}} - {{film.year}} <a ng-click="removeFilm($index)"><span class="badge">Remove</span></a></h3>
+            </div>
         </li>                                   
     </ul>
     <span><h3>Total Films: {{films.length}}</h3></span>
