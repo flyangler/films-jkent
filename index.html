@@ -1,23 +1,22 @@
 <html ng-app="films">
+
 <head>
     <meta charset="UTF-8">
     <title>Films</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
     <link rel="stylesheet" href="assets/styles/style.css">
 </head>
+
 <body ng-controller="FilmsController">
     <!--{{test}}-->
-    <h3>Valiant attempt! but these features are currently not working</h3>
-    <button ng-click="sortOrder='film.name''">Sort by Name</button>
-    <button ng-click="sortOrder='film.year'">Sort by year</button>
-    
+
     <ul>
         <li ng-repeat="film in films | filter: query | orderBy: sortOrder">
             <!--<li ng-repeat="film in films">-->
             <div>
-            <h3>{{film.name}} - {{film.year}} <a ng-click="removeFilm($index)"><span class="badge">Remove</span></a></h3>
+                <h3>{{film.name}} - {{film.year}} <a ng-click="removeFilm($index)"><span class="badge">Remove</span></a></h3>
             </div>
-        </li>                                   
+        </li>
     </ul>
     <span><h3>Total Films: {{films.length}}</h3></span>
     <!--START NEW FILM FORM-->
@@ -30,20 +29,28 @@
      */
     -->
     <div class="form">
-        <div class="form-group"><label for="name">Title:</label>
-            <input class="form-control" type="text" ng-model="newFilm.name" placeholder="Movie title"/>
+        <div class="form-group">
+            <label for="name">Title:</label>
+            <input class="form-control" type="text" ng-model="newFilm.name" placeholder="Movie title" />
         </div>
-        <div class="form-group"><label for="year">Year Created:</label>
+        <div class="form-group">
+            <label for="year">Year Created:</label>
             <input class="form-control" type="number" ng-model="newFilm.year" placeholder="Year Created" />
         </div>
 
-        <button ng-click="addItem()">Add Item</button>    
+        <button ng-click="addItem()">Add Item</button>
     </div>
     <!--END NEW TASK FORM-->
-    
+    <div container>
+        <h3 style='color:red'>Valiant attempt! But unfortunately these features are currently not working</h3>
+        <button ng-click="sortOrder='films.name''">Sort by Name</button>
+        <button ng-click="sortOrder='films.year'">Sort by year</button>
+    </div>
+
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0-rc.2/angular.min.js"></script>
     <script src="app/app.js"></script>
-    <script src="app/components/todo/film-controller.js"></script>
-    
+    <script src="app/components/controllers/film-controller.js"></script>
+
 </body>
+
 </html>
